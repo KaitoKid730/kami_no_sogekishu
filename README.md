@@ -2,7 +2,7 @@
 
 Kami No Sogekishu is a custom EDOPro archetype designed around a team of snipers that control the field with their ammo.
 
-**Showcase site:** https://YOUR-USERNAME.github.io/YOUR-REPO/
+**Showcase site:** https://kaitokid730.github.io/kami_no_sogekishu
 
 ## The cards
 
