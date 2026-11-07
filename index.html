@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kami no Sogekishu - custom Yu-Gi-Oh! snipers</title>
+<meta name="description" content="Kami no Sogekishu: ten custom Yu-Gi-Oh! cards about snipers who call a zone and let one bullet decide the duel. Free download for EDOPro.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='12' fill='none' stroke='%23d8a94a' stroke-width='2.5'/><path d='M16 0v11M16 21v11M0 16h11M21 16h11' stroke='%23d8a94a' stroke-width='2.5'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@800;900&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#121a21;--bg2:#0d1319;--panel:#18222b;--line:#2b3a46;--ink:#e3ebee;--mute:#93a4ad;--brass:#d8a94a;--lens:#6fd6c0;--st:'Big Shoulders Stencil Display',Impact,'Arial Narrow',sans-serif;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:4rem}
+body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 'Hanken Grotesk',system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.wrap{max-width:1180px;margin:auto;padding:0 clamp(1rem,4vw,2rem)}
+h2,h3,.btn,.num{font-family:var(--st)}
+h2{font-weight:900;font-size:clamp(2.3rem,6vw,4.2rem);line-height:.92;text-transform:uppercase;letter-spacing:.01em;max-width:14ch}
+nav{position:sticky;top:0;z-index:20;background:#121a21d9;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:3.4rem}
+nav b{font:900 1.4rem var(--st);letter-spacing:.06em;color:var(--brass)}
+nav div{display:flex;gap:1.6rem;font-size:.95rem}
+nav a{text-decoration:none;color:var(--mute)}nav a:hover{color:var(--ink)}
+.hero{position:relative;overflow:hidden;cursor:crosshair;background:radial-gradient(110% 80% at 72% 8%,#2c4458 0,#162029 52%,#0d1319 100%)}
+.hero::before{content:"";position:absolute;inset:0;opacity:.7;background:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='100'><path d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='%236fd6c0' stroke-opacity='.07'/></svg>");-webkit-mask:linear-gradient(#000,transparent 80%);mask:linear-gradient(#000,transparent 80%)}
+.kanji{position:absolute;right:1.5%;top:3rem;writing-mode:vertical-rl;font:900 clamp(5rem,15vw,13rem)/1 'Noto Serif JP','Yu Mincho','Hiragino Mincho ProN',serif;color:#e3ebee;opacity:.045;pointer-events:none;user-select:none}
+.hg{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:2rem;align-items:center;min-height:calc(100svh - 3.4rem);padding-block:3rem 8rem}
+h1{font:900 clamp(3.6rem,10.6vw,9.6rem)/.82 var(--st);text-transform:uppercase;letter-spacing:.005em}
+h1 span{display:block;animation:up .8s cubic-bezier(.2,.8,.2,1) both}
+h1 span+span{color:transparent;-webkit-text-stroke:2px var(--brass);animation-delay:.12s}
+.lede{max-width:34ch;margin:1.6rem 0 2rem;font-size:1.25rem;color:#c3d0d6;animation:up .8s .3s both}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;animation:up .8s .42s both}
+.btn{display:inline-block;padding:.7rem 1.5rem;background:var(--brass);color:#1a1405;font-weight:800;font-size:1.35rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:2px solid var(--brass);clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px))}
+.btn:hover{background:#efc268}.btn.ghost{background:transparent;color:var(--ink);border-color:#5b6f7b}.btn.ghost:hover{border-color:var(--ink);background:#ffffff10}
+.hint{position:absolute;left:clamp(1rem,4vw,2rem);bottom:6.5rem;z-index:3;font-size:.85rem;color:var(--mute)}
+.fan{position:relative;width:100%;max-width:560px;aspect-ratio:1/1.08;justify-self:center}
+.fan img{position:absolute;width:55%;height:auto;border-radius:5px;box-shadow:0 20px 50px #000a,0 0 0 1px #ffffff18;animation:drop .9s cubic-bezier(.2,.8,.2,1) both}
+.fan img:nth-child(1){left:0;top:9%;transform:rotate(-9deg);animation-delay:.5s}
+.fan img:nth-child(2){left:22%;top:0;z-index:2;animation-delay:.65s}
+.fan img:nth-child(3){left:45%;top:11%;transform:rotate(9deg);animation-delay:.8s}
+.sky{position:absolute;left:0;bottom:-1px;width:100%;height:clamp(70px,14vw,170px);z-index:1;display:block}
+.ret{position:absolute;left:0;top:0;z-index:5;width:190px;margin:-95px 0 0 -95px;color:var(--lens);pointer-events:none;will-change:transform}
+.ret svg{display:block;width:100%;filter:drop-shadow(0 0 6px #6fd6c066)}
+.ret.kick svg{animation:kick .28s}
+.ro{position:absolute;left:112px;top:112px;white-space:nowrap;font-size:.78rem;font-variant-numeric:tabular-nums;color:var(--lens);opacity:.85}
+.hole{position:absolute;z-index:4;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;background:radial-gradient(circle,#03060a 0 30%,#03060acc 36%,transparent 64%);pointer-events:none;animation:hole 3.4s forwards}
+.hole::before{content:"";position:absolute;inset:-34px;border-radius:50%;border:2px solid var(--brass);animation:ring .5s forwards}
+.hole::after{content:"";position:absolute;inset:-16px;border-radius:50%;background:repeating-conic-gradient(#ffffff40 0 1.5deg,transparent 1.5deg 41deg);-webkit-mask:radial-gradient(circle,transparent 26%,#000 28%,transparent 68%);mask:radial-gradient(circle,transparent 26%,#000 28%,transparent 68%)}
+.tracer{position:absolute;z-index:4;height:2px;transform-origin:0 50%;background:linear-gradient(90deg,transparent,var(--brass) 70%,#fff);pointer-events:none;animation:tr .5s ease-out forwards}
+@keyframes up{from{opacity:0;transform:translateY(40px)}}
+@keyframes drop{from{opacity:0;translate:0 -50px}}
+@keyframes kick{40%{transform:scale(1.2) translateY(-8px)}}
+@keyframes ring{from{transform:scale(.15);opacity:1}to{transform:scale(1);opacity:0}}
+@keyframes hole{0%{transform:scale(.3);opacity:0}6%{transform:scale(1.2);opacity:1}12%{transform:scale(1)}85%{opacity:1}100%{opacity:0}}
+@keyframes tr{0%{clip-path:inset(0 100% 0 0)}50%{clip-path:inset(0);opacity:1}100%{clip-path:inset(0);opacity:0}}
+section{padding:6.5rem 0;border-top:1px solid var(--line)}
+.bar{display:flex;flex-wrap:wrap;gap:.5rem;margin:2rem 0 2.5rem}
+.f{font:inherit;font-weight:500;color:var(--mute);background:transparent;border:1px solid var(--line);padding:.45rem 1.1rem;border-radius:99px;cursor:pointer}
+.f:hover{color:var(--ink);border-color:var(--mute)}.f[aria-pressed=true]{background:var(--ink);color:#0d1319;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,215px),1fr));gap:clamp(1rem,2.5vw,1.8rem)}
+.card{all:unset;display:block;cursor:pointer;box-sizing:border-box}
+.card[hidden]{display:none}
+.cimg{display:block;perspective:800px}
+.cimg img{display:block;width:100%;height:auto;border-radius:4px;box-shadow:0 14px 30px #0008;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .15s ease-out,box-shadow .2s}
+.card:hover .cimg img,.card:focus-visible .cimg img{box-shadow:0 18px 40px #000a,0 0 0 2px var(--brass)}
+.cap{display:block;margin-top:.8rem}.cap b{display:block;font-weight:700;line-height:1.25}.cap small{color:var(--mute);font-size:.88rem}
+dialog{border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:0;width:min(1020px,94vw);max-height:94vh;overflow:auto;border-radius:10px;margin:auto}
+dialog::backdrop{background:#05090cd9;backdrop-filter:blur(6px)}
+.dg{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(1.2rem,3vw,2.5rem);padding:clamp(1rem,3vw,2rem)}
+.dg img{width:100%;height:auto;border-radius:5px;box-shadow:0 14px 40px #000a}
+.dg h3{font-size:clamp(2rem,4.4vw,3rem);line-height:.95;text-transform:uppercase;color:var(--brass);font-weight:900}
+.role{color:var(--lens);margin:.5rem 0 1rem;font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{display:inline-flex;align-items:center;gap:.45rem;border:1px solid var(--line);border-radius:99px;padding:.15rem .8rem;font-size:.9rem}
+.chip i{width:.7rem;height:.7rem;border-radius:50%}
+.st{display:flex;gap:2rem;margin:1.2rem 0}.st small{display:block;color:var(--mute);font-size:.8rem;letter-spacing:.1em}.st b{font:900 2.6rem/1 var(--st)}
+.eff{margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--line)}
+.eff p{margin-bottom:.7rem;font-size:1rem;line-height:1.6;max-width:62ch}
+.eff p.b{padding-left:1.1rem;position:relative}.eff p.b::before{content:"";position:absolute;left:0;top:.62em;width:.5rem;height:.5rem;border-radius:50%;background:var(--brass)}
+.cid{color:var(--mute);font-size:.85rem;margin-top:1rem}
+.nv{display:flex;gap:.6rem;margin-top:1.4rem;flex-wrap:wrap}
+.nv button{font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);padding:.45rem 1rem;border-radius:99px;cursor:pointer}.nv button:hover{border-color:var(--ink)}
+.dl{background:linear-gradient(180deg,var(--bg2),#10181f)}
+.crate{margin-top:2.5rem;border:2px dashed #6b5a2e;padding:clamp(1.4rem,4vw,3rem);display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(1.5rem,5vw,4rem);align-items:center;background:repeating-linear-gradient(135deg,#d8a94a0a 0 14px,transparent 14px 28px)}
+.crate ol{padding-left:1.2rem;color:#c3d0d6}.crate li{margin-bottom:.6rem;padding-left:.3rem}
+.crate p{color:var(--mute);margin-top:1rem;font-size:.95rem}.crate code{color:var(--brass);font-size:.92em}
+.alt{display:inline-block;margin-top:1rem;color:var(--mute)}.alt:hover{color:var(--ink)}
+footer h3{font-size:1.6rem;text-transform:uppercase;color:var(--ink);letter-spacing:.03em}.cr{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:.35rem 2rem;list-style:none;padding:0;margin:.8rem 0 1.8rem}.cr b{color:var(--ink);font-weight:500;margin-right:.4rem}.cid a,footer a{color:var(--lens)}footer{padding:2.5rem 0 3rem;border-top:1px solid var(--line);color:var(--mute);font-size:.88rem}footer p{max-width:70ch}
+@media(max-width:860px){.hg,.crate,.dg{grid-template-columns:1fr}.hg{padding-block:2rem 7rem}.hint{display:none}nav div{gap:1rem}.dg img{max-width:340px;margin:auto}.kanji{opacity:.035}}
+@media(max-width:480px){nav div a:first-child{display:none}.ret{width:130px;margin:-65px 0 0 -65px}.ro{left:80px;top:80px}}
+@media(prefers-reduced-motion:reduce){*,::before,::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>神の狙撃手</b><div><a href="#arsenal">The cards</a><a href="#download">Download</a></div></div></nav>
+
+<header class="hero" id="top">
+  <div class="kanji" aria-hidden="true">神の狙撃手</div>
+  <div class="wrap hg">
+    <div>
+      <h1><span>Kami no</span><span>Sogekishu</span></h1>
+      <p class="lede">A squad of snipers who never join the fight. They call a zone, spend one bullet, and the duel changes shape.</p>
+      <div class="cta"><a class="btn" href="#arsenal">See the cards</a><a class="btn ghost" href="#download">Download for EDOPro</a></div>
+    </div>
+    <div class="fan" aria-hidden="true">
+      <img src="assets/cards/900000103.webp" alt="" width="813" height="1185">
+      <img src="assets/cards/900000101.webp" alt="" width="813" height="1185">
+      <img src="assets/cards/900000102.webp" alt="" width="813" height="1185">
+    </div>
+  </div>
+  <p class="hint">Click anywhere on this scene to take a shot.</p>
+  <svg class="sky" viewBox="0 0 1200 160" preserveAspectRatio="none" aria-hidden="true"><path d="M0 160V90h40V70h30v20h50V50h40v40h30V80h60V40h26v50h54V95h40V60h50v35h70V75h30V30h36v45h44V85h60V55h44v40h50V70h40v25h60V45h30v50h50V88h60V65h40v30h50V80h40v80z" fill="#0a0f14"/><path d="M0 160V118h60V102h44v16h70V96h36v22h80V108h50v10h90V92h40v26h70V104h60v14h100V98h46v20h90V106h60v12h80V94h40v24h70V110h80v50z" fill="#070b0f"/></svg>
+  <div class="ret" aria-hidden="true">
+    <svg viewBox="-100 -100 200 200" fill="none" stroke="currentColor"><circle r="92" stroke-width="1.6"/><circle r="3" fill="currentColor" stroke="none"/><path stroke-width="1.3" d="M-100 0H-14M14 0H100M0-100V-14M0 14V100"/><path stroke-width="1" d="M-64-5v10M-44-5v10M-24-5v10M24-5v10M44-5v10M64-5v10M-5-64h10M-5-44h10M-5-24h10M-5 24h10M-5 44h10M-5 64h10"/></svg>
+    <span class="ro" id="ro"></span>
+  </div>
+</header>
+
+<section id="arsenal"><div class="wrap">
+  <h2>The arsenal</h2>
+  <div class="bar" role="group" aria-label="Filter cards">
+    <button class="f" data-f="all" aria-pressed="true">All 10</button>
+    <button class="f" data-f="sniper" aria-pressed="false">Snipers</button>
+    <button class="f" data-f="fusion" aria-pressed="false">Fusion</button>
+    <button class="f" data-f="op" aria-pressed="false">Spells</button>
+  </div>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<section class="dl" id="download"><div class="wrap">
+  <h2>Load them into EDOPro</h2>
+  <div class="crate">
+    <div>
+      <ol>
+        <li>Download the pack.</li>
+        <li>Put the file in the <code>expansions</code> folder inside your EDOPro folder.</li>
+        <li>Restart EDOPro, then search for "Kami no Sogekishu" in the Deck Editor.</li>
+      </ol>
+      <p>Ten fully scripted cards, IDs 900000101 to 900000110.</p>
+    </div>
+    <div>
+      <a class="btn" href="downloads/Kami-no-Sogekishu-EDOPro.zip" download>Download the pack</a><br>
+      <a class="alt" href="downloads/kami_no_sogekishu.cdb" download>Card database only (.cdb)</a>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap"><h3>Art credits</h3><ul class="cr" id="cr"></ul><p>Fan-made and not affiliated with or endorsed by Konami. Yu-Gi-Oh! is a trademark of Konami Digital Entertainment. Card artwork belongs to its original artists.</p></div></footer>
+
+<dialog id="dlg" aria-label="Card details"><div class="dg">
+  <img id="dimg" alt="" width="813" height="1185">
+  <div>
+    <h3 id="dn"></h3><p class="role" id="dr"></p>
+    <div class="chips" id="dm"></div><div class="st" id="ds"></div>
+    <div class="eff" id="de"></div><p class="cid" id="did"></p><p class="cid" id="dcr"></p>
+    <div class="nv"><button id="pv">Previous</button><button id="nx">Next</button><button id="cl">Close</button></div>
+  </div>
+</div></dialog>
+
+<script>
+const C=[{"k": "sniper", "t": "Illusion / Effect", "a": "DARK", "lv": 1, "atk": 1000, "def": 800, "id": 900000101, "n": "Kami no Sogekishu - Kage", "s": "Kage", "role": "Locks a Monster Zone", "e": "(Quick Effect): You can shuffle this card from your banishment into the Deck; select 1 Monster Zone, and the monster in that zone cannot attack, activate its effects, or change its battle position, as long as it remains face-up on the field.\nYou can banish this card from your hand or GY; Set 1 \"Kami no Sogekishu\" Spell/Trap directly from your Deck. It can be activated this turn.\nYou can only use each effect of \"Kami no Sogekishu - Kage\" once per turn.", "cl": "Neko_4cfantasy on X", "cu": "https://x.com/Neko_4cfantasy/status/1560664058827018241"}, {"k": "sniper", "t": "Illusion / Effect", "a": "FIRE", "lv": 4, "atk": 1800, "def": 1400, "id": 900000102, "n": "Kami no Sogekishu - Bakuen", "s": "Bakuen", "role": "Destroys two adjacent zones", "e": "(Quick Effect): You can shuffle this card from your GY into the Deck; select 2 adjacent zones (including diagonally adjacent zones), and destroy the cards in those zones.\nYou can discard this card; add 1 \"Kami no Sogekishu\" monster from your Deck to your hand, except \"Kami no Sogekishu - Bakuen\".\nYou can only use each effect of \"Kami no Sogekishu - Bakuen\" once per turn.", "cl": "Neko_4cfantasy on X", "cu": "https://x.com/Neko_4cfantasy/status/1560664058827018241"}, {"k": "sniper", "t": "Illusion / Effect", "a": "WATER", "lv": 2, "atk": 1200, "def": 1000, "id": 900000103, "n": "Kami no Sogekishu - Shizume", "s": "Shizume", "role": "Negates a zone", "e": "(Quick Effect): You can shuffle this card from your field into the Deck; select 1 zone, and negate the effects of the card in that zone.\nIf this card is Normal or Special Summoned: You can draw 2 cards, then discard 1 card.\nYou can only use each effect of \"Kami no Sogekishu - Shizume\" once per turn.", "cl": "Pixiv artwork 136548345", "cu": "https://www.pixiv.net/en/artworks/136548345"}, {"k": "sniper", "t": "Illusion / Effect", "a": "LIGHT", "lv": 3, "atk": 1600, "def": 1200, "id": 900000104, "n": "Kami no Sogekishu - Jakuten", "s": "Jakuten", "role": "Withers a Monster Zone", "e": "(Quick Effect): You can shuffle this card from your hand into the Deck; select 1 Monster Zone, and if a monster is in that zone, it becomes 0 ATK and 0 DEF, also it cannot be used as material for a Fusion, Synchro, Xyz, or Link Summon, nor be Tributed, as long as it remains face-up on the field. For the rest of this turn and the next turn, you cannot activate monster effects from your hand, except \"Kami no Sogekishu\" monsters.\nIf this card is in your GY: You can add it to your hand, then send 1 \"Kami no Sogekishu\" monster from your Deck to the GY, except \"Kami no Sogekishu - Jakuten\".\nYou can only use each effect of \"Kami no Sogekishu - Jakuten\" once per turn.", "cl": "Pixiv artwork 82925096", "cu": "https://www.pixiv.net/en/artworks/82925096"}, {"k": "fusion", "t": "Rock / Fusion / Effect", "a": "EARTH", "lv": 5, "atk": 0, "def": 2200, "id": 900000105, "n": "Kami no Sogekishu - Tate", "s": "Tate", "role": "Fusion, hard cover", "e": "2 \"Kami no Sogekishu\" monsters\nIf this card is Fusion Summoned: You can target up to 2 \"Kami no Sogekishu\" Spells/Traps in your GY and/or banishment; Set them. They can be activated the turn they are Set.\nIf a \"Kami no Sogekishu\" monster you control activates its effect: You can inflict 500 damage to your opponent. You can only use this effect of \"Kami no Sogekishu - Tate\" once per Chain.\nYour opponent cannot target other monsters you control for attacks or with card effects.", "cl": "Cheon1986 on X", "cu": "https://x.com/Cheon1986/status/2016798479125799105"}, {"k": "op", "t": "Continuous Spell", "a": "SPELL", "lv": 0, "id": 900000106, "n": "Kami no Sogekishu - Sniper's Nest", "s": "Sniper's Nest", "role": "Continuous, turns snipers into damage", "e": "After you activate this card, you cannot Special Summon from the Extra Deck, except Fusion Monsters, for the rest of this turn. During either player's turn, before another activated card or effect resolves: You can banish 1 \"Kami no Sogekishu\" monster you control until immediately after that card or effect resolves, and if you do, inflict damage to your opponent equal to half that monster's original ATK. Immediately after that monster returns, if you have 1 or more different \"Kami no Sogekishu\" monsters in your GY, you gain 500 LP, and if you have 2 or more, also draw 1 card, then discard 1 card. You can only use this effect of \"Kami no Sogekishu - Sniper's Nest\" once per turn for each original name of the monster banished by this effect.", "cl": "Pixiv artwork 95714909", "cu": "https://www.pixiv.net/en/artworks/95714909"}, {"k": "op", "t": "Quick-Play Spell", "a": "SPELL", "lv": 0, "id": 900000107, "n": "Kami no Sogekishu - Overwatch", "s": "Overwatch", "role": "Quick-Play, search or send", "e": "Activate 1 of these effects (but you can only activate each of these effects of \"Kami no Sogekishu - Overwatch\" once per turn).\n● Add 1 \"Kami no Sogekishu\" monster from your Deck to your hand.\n● Send 1 \"Kami no Sogekishu\" monster from your Deck to the GY.\nAfter you activate this card, you cannot Special Summon from the Extra Deck, except Fusion Monsters, for the rest of this turn.\nDuring the End Phase, if this card is in your GY: You can add it to your hand. You can only use this effect of \"Kami no Sogekishu - Overwatch\" once per turn.", "cl": "Pixiv artwork 102184125", "cu": "https://www.pixiv.net/en/artworks/102184125"}, {"k": "op", "t": "Quick-Play Spell", "a": "SPELL", "lv": 0, "id": 900000108, "n": "Kami no Sogekishu - Deployment", "s": "Deployment", "role": "Quick-Play, summon or banish", "e": "Activate 1 of these effects (but you can only activate each of these effects of \"Kami no Sogekishu - Deployment\" once per turn).\n● Special Summon 1 \"Kami no Sogekishu\" monster from your Deck.\n● Banish 1 \"Kami no Sogekishu\" monster from your Deck.\nAfter you activate this card, you cannot Special Summon from the Extra Deck, except Fusion Monsters, for the rest of this turn.\nDuring the End Phase, if this card is in your GY: You can add it to your hand. You can only use this effect of \"Kami no Sogekishu - Deployment\" once per turn.", "cl": "Pixiv artwork 72006819", "cu": "https://www.pixiv.net/en/artworks/72006819"}, {"k": "op", "t": "Quick-Play Spell", "a": "SPELL", "lv": 0, "id": 900000109, "n": "Kami no Sogekishu - Coordinated Assault", "s": "Coordinated Assault", "role": "Quick-Play, borrow a Quick Effect", "e": "Apply the Quick Effect of 1 \"Kami no Sogekishu\" monster in your hand, Deck, GY, or banishment. After you activate this card, you cannot Special Summon from the Extra Deck, except Fusion Monsters, for the rest of this turn.\nIf this card is in your GY: You can banish this card; add 1 \"Kami no Sogekishu\" Spell/Trap from your Deck to your hand, except \"Kami no Sogekishu - Coordinated Assault\". You can only use this effect of \"Kami no Sogekishu - Coordinated Assault\" once per turn.", "cl": "Cheon1986 on X", "cu": "https://x.com/Cheon1986/status/1910264491352412554"}, {"k": "op", "t": "Normal Spell", "a": "SPELL", "lv": 0, "id": 900000110, "n": "Kami no Sogekishu - Formation", "s": "Formation", "role": "Fusion Summon spell", "e": "Fusion Summon 1 \"Kami no Sogekishu\" Fusion Monster from your Extra Deck, by sending its materials from your hand, field, and/or Deck to the GY. You cannot Special Summon from the Extra Deck, except Fusion Monsters, the turn you activate this card. You can only activate 1 \"Kami no Sogekishu - Formation\" per turn.\nYou can banish this card from your GY, then target up to 2 of your \"Kami no Sogekishu\" monsters in your GY and/or banishment; shuffle them into the Deck. You can only use this effect of \"Kami no Sogekishu - Formation\" once per turn.", "cl": "Girls' Frontline official art (artist unknown), via Wallpapers Den", "cu": "https://wallpapersden.com/frontline-g11-and-hk416-wallpaper/"}];
+const A={EARTH:'#b58a4f',FIRE:'#ff6a4d',WATER:'#4aa8ff',LIGHT:'#ffe08a',DARK:'#b38cff',SPELL:'#2fc29a'};
+const $=s=>document.querySelector(s),esc=s=>s.replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const lk=c=>`<a href="${c.cu}" target="_blank" rel="noopener">${esc(c.cl)}</a>`;
+const grid=$('#grid'),dlg=$('#dlg');let cur=0;
+grid.innerHTML=C.map((c,i)=>`<button class="card" data-k="${c.k}" data-i="${i}" aria-label="Open ${esc(c.n)}"><span class="cimg"><img src="assets/cards/${c.id}.webp" width="813" height="1185" loading="lazy" alt="${esc(c.n)} card"></span><span class="cap"><b>${esc(c.s)}</b><small>${esc(c.role)}</small></span></button>`).join('');
+$('#cr').innerHTML=C.map(c=>`<li><b>${esc(c.s)}</b> ${lk(c)}</li>`).join('');
+document.querySelectorAll('.f').forEach(b=>b.onclick=()=>{document.querySelectorAll('.f').forEach(x=>x.setAttribute('aria-pressed',x===b));[...grid.children].forEach(c=>c.hidden=b.dataset.f!=='all'&&c.dataset.k!==b.dataset.f)});
+grid.addEventListener('pointermove',e=>{const m=e.target.closest('.cimg');if(!m||!e.pointerType||e.pointerType==='touch')return;const r=m.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;m.style.setProperty('--ry',x*12+'deg');m.style.setProperty('--rx',-y*12+'deg')});
+grid.addEventListener('pointerout',e=>{const m=e.target.closest('.cimg');if(m){m.style.setProperty('--rx','0deg');m.style.setProperty('--ry','0deg')}});
+function show(i){const c=C[i];cur=i;$('#dimg').src=`assets/cards/${c.id}.webp`;$('#dimg').alt=c.n+' card';$('#dn').textContent=c.s;$('#dr').textContent=c.role;
+$('#dm').innerHTML=`<span class="chip"><i style="background:${A[c.a]}"></i>${c.a[0]+c.a.slice(1).toLowerCase()}</span><span class="chip">${esc(c.t)}</span>`+(c.lv?`<span class="chip">Level ${c.lv}</span>`:'');
+$('#ds').innerHTML=c.k==='op'?'':`<div><small>ATK</small><b>${c.atk}</b></div><div><small>DEF</small><b>${c.def}</b></div>`;
+$('#de').innerHTML=c.e.split('\n').map(p=>{const b=p[0]==='●';return `<p${b?' class="b"':''}>${esc(b?p.slice(1).trim():p).replace(/^\(Quick Effect\)/,'<strong>(Quick Effect)</strong>')}</p>`}).join('');
+$('#did').textContent=c.n+' - Card ID '+c.id;$('#dcr').innerHTML='Art: '+lk(c)}
+function step(d){const v=[...grid.children].filter(b=>!b.hidden).map(b=>+b.dataset.i);show(v[(v.indexOf(cur)+d+v.length)%v.length])}
+grid.addEventListener('click',e=>{const b=e.target.closest('.card');if(b){show(+b.dataset.i);dlg.showModal()}});
+$('#pv').onclick=()=>step(-1);$('#nx').onclick=()=>step(1);$('#cl').onclick=()=>dlg.close();
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+addEventListener('keydown',e=>{if(!dlg.open)return;if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)});
+
+const hero=$('#top'),ret=$('.ret'),ro=$('#ro'),fine=matchMedia('(pointer:fine)').matches,calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+let W=hero.clientWidth,H=hero.clientHeight,tx=W*.6,ty=H*.42,x=tx,y=ty;
+addEventListener('resize',()=>{W=hero.clientWidth;H=hero.clientHeight});
+hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();tx=e.clientX-r.left;ty=e.clientY-r.top});
+(function loop(t){if(!fine&&!calm){tx=W*.6+Math.sin(t/1700)*W*.08;ty=H*.42+Math.cos(t/2300)*H*.08}
+x+=(tx-x)*.16;y+=(ty-y)*.16;ret.style.transform=`translate(${x}px,${y}px)`;
+ro.textContent=`Range ${Math.round(180+x/4+y/6)} m   Wind ${((x-y)/260).toFixed(1)} kn`;requestAnimationFrame(loop)})(0);
+hero.addEventListener('pointerdown',e=>{if(e.target.closest('a,button'))return;const r=hero.getBoundingClientRect(),px=e.clientX-r.left,py=e.clientY-r.top;tx=px;ty=py;
+const h=document.createElement('i');h.className='hole';h.style.left=px+'px';h.style.top=py+'px';
+const t=document.createElement('i');t.className='tracer';const ox=0,oy=r.height,dx=px-ox,dy=py-oy;t.style.cssText=`left:${ox}px;top:${oy}px;width:${Math.hypot(dx,dy)}px;transform:rotate(${Math.atan2(dy,dx)}rad)`;
+hero.append(t,h);setTimeout(()=>{h.remove();t.remove()},3400);ret.classList.remove('kick');void ret.offsetWidth;ret.classList.add('kick')});
+</script>
+</body>
+</html>
