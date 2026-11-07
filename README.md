@@ -2,7 +2,7 @@
 
 Kami No Sogekishu is a custom EDOPro archetype designed around a team of snipers that control the field with their ammo.
 
-**Showcase site:** https://KaitoKid730.github.io/kami_no_sogekishu/
+**Showcase site:** https://YOUR-USERNAME.github.io/YOUR-REPO/
 
 ## The cards
 
@@ -25,9 +25,9 @@ Browse the card art and full effect texts on the showcase site above.
 
 ## How to install
 
-1. Download the pack: [`Kami-no-Sogekishu-EDOPro.zip`](downloads/Kami-no-Sogekishu-EDOPro.zip).
+1. Download the pack: [`kami_no_sogekishu.rar`](downloads/kami_no_sogekishu.rar).
 2. Close EDOPro if it is running.
-3. Put the `.zip` file, without unzipping it, into the `expansions` folder inside your EDOPro folder.
+3. Extract the `.rar` with 7-Zip or WinRAR, then copy the extracted files into the `expansions` folder inside your EDOPro folder.
 4. Start EDOPro. The cards load automatically.
 5. Open the Deck Editor and search for `Kami no Sogekishu` to find them.
 
@@ -44,7 +44,7 @@ The database alone (`downloads/kami_no_sogekishu.cdb`) only adds the card data. 
 ### Troubleshooting
 
 - **The cards don't show up:** make sure the file is directly inside `expansions` and not in a subfolder, then restart EDOPro.
-- **Cards show up but their effects don't work:** the scripts are missing. Use the full `.zip` pack, or check that the `.lua` files are in `expansions/script`.
+- **Cards show up but their effects don't work:** the scripts are missing. Use the full `.rar` pack, or check that the `.lua` files are in `expansions/script`.
 
 ## Repository layout
 
